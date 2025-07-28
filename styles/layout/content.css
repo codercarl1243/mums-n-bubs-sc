@@ -1,0 +1,16 @@
+
+
+.body-wrapper {
+  --body-wrapper-padding: min(2rem, 5vw); /* Shrinks on small viewports */
+  display: grid;
+  grid-template-columns: var(--body-wrapper-padding) 1fr var(--body-wrapper-padding);
+}
+
+/* Targets all direct children and places them in the center column */
+.body-wrapper > * {
+  grid-column: 2;
+}
+
+html {
+  
+}
