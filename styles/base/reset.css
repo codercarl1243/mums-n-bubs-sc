@@ -13,7 +13,7 @@
     -moz-text-size-adjust: none;
     -webkit-text-size-adjust: none;
     text-size-adjust: none;
-    font-size: var(--font-size-base);
+    font-size: var(--text-base);
   }
 
   /* Remove default margin in favour of better control in authored CSS */
@@ -55,7 +55,7 @@
   button,
   input,
   label {
-    line-height: var(--line-height-tight);
+    line-height: var(--text-2xl--line-height);
   }
 
   /* Balance text wrapping on headings */
