@@ -32,12 +32,9 @@ export const metadata: Metadata = {
   url: "TBA",
   siteName: "Bumps Babies and Beyond",
   // images: [{ url: 'https://TBA.og.png' }]
-
-
   },
   description: "TBA",
   keywords: ["TBA"],
-  viewport: "TBA",
   // HrefLang: "",
   authors: {name: "Carl Davidson", url: "https://codercarl.dev"},
   robots: "TBA"

@@ -1,4 +1,3 @@
-import { memo } from "react";
 import Accordion from "./accordion";
 
 const FAQ_DATA = [
@@ -27,9 +26,9 @@ const FAQ_DATA = [
 export default function FAQ() {
 
   return (
-    <section className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+    <section className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start my-4">
       <div>
-        <h2 className="text-xl text-center font-bold mb-4 text-primary-700">FAQ's</h2>
+        <h2 className="text-xl text-center font-bold mb-4 text-primary-700">FAQ&lsquo;s</h2>
         <Accordion items={FAQ_DATA} accordionName={"faq"} />
       </div>
  <div className="border-2 border-purple-600 h-full w-full min-h-[200px] flex items-center justify-center">

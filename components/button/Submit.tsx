@@ -1,5 +1,4 @@
 'use client'
-import { forwardRef } from "react";
 import { ButtonProps } from "./Button.type";
 import styles from './button.module.css'
 import Button from ".";

@@ -2,8 +2,6 @@
 import { ButtonProps } from "./Button.type";
 import useButton from "./useButton";
 import clsx from "clsx";
-import { forwardRef } from "react";
-
 
 /**
 type="button" by default — Prevents accidental form submissions ✅

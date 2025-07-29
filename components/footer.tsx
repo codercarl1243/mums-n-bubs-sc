@@ -1,10 +1,10 @@
 import { RiFacebookLine, RiInstagramLine } from "@remixicon/react";
-import { GoogleMapsEmbed } from '@next/third-parties/google'
+// import { GoogleMapsEmbed } from '@next/third-parties/google'
 
 export default function Footer() {
 
     return (
-        <footer className="flex gap-2 justify-between bg-green-300">
+        <footer className="flex gap-2 justify-between bg-secondary-400">
             <div className="flex gap-2">
                 {<RiFacebookLine color={"blue"}/>}
                 {<RiInstagramLine color={"blue"}/>}

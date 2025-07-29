@@ -1,5 +1,4 @@
 'use client'
-import { forwardRef } from "react";
 import { IconButtonProps } from "./Button.type";
 import Button from ".";
 import clsx from "clsx";
