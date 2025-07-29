@@ -1,35 +1,41 @@
-import {memo} from "react";
+import { memo } from "react";
 import Accordion from "./accordion";
 
 const FAQ_DATA = [
   {
-    question: "What is your return policy?",
-    answer: "We accept returns within 30 days of purchase as long as the item is unused and in its original packaging.",
+    question: "Where is the event?",
+    answer: "The Event will be held in the Palmwoods Memorial Hall - 1 Main St, Palmwoods QLD 4555",
   },
   {
-    question: "How long does shipping take?",
-    answer: "Shipping typically takes 3–7 business days depending on your location and selected shipping method.",
+    question: "When is the event?",
+    answer: "1st of November 2025",
   },
   {
-    question: "Do you offer international shipping?",
-    answer: "Yes, we ship to most countries worldwide. Shipping times and costs may vary based on destination.",
+    question: "Is there Parking?",
+    answer: "Yes, parking is available at the venue. please refer to the below image for more information.\n [INSERT PARKING IMAGE HERE]",
   },
   {
-    question: "How can I track my order?",
-    answer: "Once your order ships, you’ll receive an email with a tracking number and a link to view the delivery status.",
+    question: "How much does it cost?",
+    answer: "Entry is free",
   },
   {
-    question: "Can I change or cancel my order?",
-    answer: "We can modify or cancel orders within one hour of purchase. After that, the order is processed and can’t be changed.",
+    question: "What can I do at the event?",
+    answer: "We will have a number of stores available, play equipment for the little ones and [INSERT MORE HERE]",
   },
 ];
 
 export default function FAQ() {
 
-    return (
-        <section>
-            <h2>FAQ's</h2>
-            <Accordion items={FAQ_DATA} accordionName={"faq"} />
-        </ section>
-    )
+  return (
+    <section className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+      <div>
+        <h2 className="text-xl text-center font-bold mb-4 text-primary-700">FAQ's</h2>
+        <Accordion items={FAQ_DATA} accordionName={"faq"} />
+      </div>
+ <div className="border-2 border-purple-600 h-full w-full min-h-[200px] flex items-center justify-center">
+        {/* Placeholder for image or visual content */}
+        <span className="text-purple-600 italic">[Reserved for image or content]</span>
+      </div>
+    </ section>
+  )
 }
