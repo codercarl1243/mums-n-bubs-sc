@@ -35,37 +35,50 @@ export default function Accordion({ accordionName, items }: AccordionProps) {
     };
 
     return (
-        <div className="accordion space-y-4 border rounded-xl border-primary-400">
+        <div className="accordion w-fit border-4 rounded-xl  border-primary-400">
             {itemsWithOpenState.map(({ id, question, answer, isOpen }) => {
+                const buttonId = `accordion-button-${accordionName + id}`;
+                const panelId = `accordion-panel-${accordionName + id}`;
 
                 return (
-                    <div key={id} className="accordion--item">
+                    <div key={id}
+                        className={clsx(
+                            "accordion--item border-b last:border-none overflow-hidden",
+                            id === 0 && "first:rounded-t-2xl",
+                            id === itemsWithOpenState.length - 1 && "last:rounded-b-2xl"
+                        )}
+                    >
                         <h3>
                             <Button
                                 onClick={() => toggleItem(id)}
-                                id={`accordion-button-${accordionName + id}`}
+                                id={buttonId}
                                 aria-expanded={isOpen}
-                                aria-controls={`accordion-panel-${accordionName + id}`}
+                                aria-controls={panelId}
                                 className={clsx(
-                                    "accordion--item__button w-full text-left justify-between p-4 font-medium flex items-center",
-                                    isOpen ? "bg-gray-100" : "bg-white"
+                                    // "accordion--item__button w-full m-0 border-x-0 transition-[border] duration-300 ease-in-out py-1 px-2 font-medium flex items-center",
+                                    "text-lg accordion--item__button w-full m-0 py-1 px-2 font-medium flex items-center border-x-0 transition-all duration-200 ease-in-out",
+                                    "hover:bg-primary-700/60 hover:text-light",
+                                    "active:bg-primary-200/80",
+                                    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-400 focus-visible:z-10",
+                                    id === 0 && "first:rounded-t-xl",
+                                    id === itemsWithOpenState.length - 1 && !isOpen && "last:rounded-b-xl"
                                 )}
                             >
+                                <span aria-hidden>{isOpen ? <Icon icon={RiArrowDropUpLine} /> : <Icon icon={RiArrowDropDownLine} />}</span>
                                 <span>{question}</span>
-                                <span aria-hidden>{isOpen ? <Icon icon={RiArrowDropUpLine} /> : <Icon icon={RiArrowDropDownLine}/>}</span>
                             </Button>
                         </h3>
-
-                        {isOpen && (
-                            <div
-                                id={`accordion-panel-${accordionName + id}`}
-                                role="region"
-                                aria-labelledby={`accordion-button-${accordionName + id}`}
-                                className="accordion--item__panel p-4 border-t text-gray-700"
-                            >
-                                {answer}
-                            </div>
-                        )}
+                        <div
+                            id={panelId}
+                            role="region"
+                            aria-labelledby={buttonId}
+                            className={clsx(
+                                isOpen ? "max-h-96 py-4 overflow-y-scroll" : "max-h-0 py-0",
+                                "accordion--item__panel px-2 transition-[max-height,padding] duration-300 ease-in-out"
+                            )}
+                        >
+                            {answer}
+                        </div>
                     </div>
                 );
             })}
