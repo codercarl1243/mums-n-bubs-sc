@@ -4,10 +4,12 @@ import Sponsors from "@/components/sponsors";
 
 export default function Home() {
   return (
-    <main id="main-content">
+    <>
       <Hero />
-      <Sponsors />
-      <FAQ />
-    </main>
+      <main id="main-content">
+        <Sponsors />
+        <FAQ />
+      </main>
+    </>
   );
 }
