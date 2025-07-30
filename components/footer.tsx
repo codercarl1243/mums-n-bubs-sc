@@ -6,6 +6,7 @@ export default function Footer() {
     return (
         <footer className="flex gap-2 justify-between bg-secondary-400">
             <div className="flex gap-2">
+                <h2 className="text-light">Contact us</h2>
                 {<RiFacebookLine color={"blue"}/>}
                 {<RiInstagramLine color={"blue"}/>}
             </div>

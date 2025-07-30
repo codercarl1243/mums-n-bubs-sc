@@ -1,16 +1,17 @@
 import type { Metadata } from "next";
 import type { Viewport } from 'next'
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Concert_One } from "next/font/google";
 import "@/styles/globals.css";
 import Header from "@/components/header";
-import Footer from "@/components/footer";
 
-const geistSans = Geist({
+
+const fontMain = Geist({
   variable: "--font-main",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
+const fontHeading = Concert_One({
+  weight: "400",
   variable: "--font-accent",
   subsets: ["latin"],
 });
@@ -48,11 +49,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased font-main body-wrapper`}
+        className={`${fontMain.variable} ${fontHeading.variable} antialiased font-main body-wrapper`}
       >
         <Header />
         {children}
-        <Footer />
       </body>
     </html>
   );

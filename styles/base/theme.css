@@ -10,13 +10,16 @@
   --color-secondary-400: hsl(162, 57%, 24%);
   --color-secondary-700: hsl(162, 66%, 12%);
 
-  /* Accent */
-  --color-accent-200: hsl(27, 92%, 90%);
-  --color-accent-400: hsl(33, 94%, 73%);
-  --color-accent-700: hsl(31, 100%, 32%);
+  --color-purple-200: #6e27a0;
+  --color-purple-400: hsl(275, 94%, 21%);
 
+  --color-yellow-400: hsl(39, 100%, 41%);
+  /* Accent */
+  /* --color-accent-200: hsl(27, 92%, 90%);
+  --color-accent-400: hsl(33, 94%, 73%);
+  --color-accent-700: hsl(31, 100%, 32%); */
   /* Light and Dark */
-  --color-light: hsl(0, 0%, 98%);
+  --color-light: #fafafa;
   --color-light-40: hsl(0, 0%, 95%, 0.4);
   --color-dark: hsl(0, 0%, 15%);
   --color-dark-40: hsla(0, 0%, 15%, 0.4);
@@ -71,7 +74,8 @@
   --font-weight-bold: 700;
 
   --font-sans: var(--font-main);
-  --font-mono: var(--font-accent);
+  --font-accent: "Concert One", "Concert One Fallback";
+
 }
 
 @media (prefers-color-scheme: dark) {
