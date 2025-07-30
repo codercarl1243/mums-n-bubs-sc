@@ -5,7 +5,7 @@ import Sponsors from "@/components/sponsors";
 export default function Home() {
   return (
     <>
-      <Hero />
+      <Hero className="width-bleed"/>
       <main id="main-content">
         <Sponsors />
         <FAQ />

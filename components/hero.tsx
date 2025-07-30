@@ -1,21 +1,23 @@
+import clsx from "clsx"
+import React from "react"
 
 
-export default function Hero() {
+export default function Hero({className, ...props}: React.ComponentProps<'section'>) {
 
     return (
-        <section className="bg-white grid grid-cols-1 md:grid-cols-2 gap-8 items-center max-w-[1440px] mx-auto px-4 py-16">
+        <section  className={clsx(className, "bg-white grid grid-cols-1 md:grid-cols-2 gap-8 items-center max-w-[1440px] mx-auto px-4 py-16")} {...props}>
             <LogoAsText className="text-3xl font-accent leading-none font-medium w-full text-center" />
             <div className="flex flex-col items-center gap-8 md:items-start">
-                <EventDetails className="w-fit details_one bg-[url('/splotch_one.png')] bg-no-repeat bg-center bg-contain p-14 text-center text-xl leading-[1.15] text-light" />
-                <EventSweeteners className="details_two w-fit bg-[url('/splotch_two.png')] bg-no-repeat bg-center bg-contain p-14 text-center text-lg text-light" />
+                <EventDetails />
+                <EventSweeteners />
             </div>
         </ section>
     )
 }
 
-function LogoAsText({ className }: { className: string }) {
+function LogoAsText(props: React.ComponentProps<'h1'>) {
     return (
-        <h1 className={className}>
+        <h1 {...props}>
             <span className="text-yellow-400 block text-center">Bumps,</span>
             <div>
                 <span className="text-purple-400">Bab</span>
@@ -27,10 +29,10 @@ function LogoAsText({ className }: { className: string }) {
         </h1>
     )
 }
-function EventDetails({ className }: { className: string }) {
+function EventDetails({ className }: React.ComponentProps<'div'>) {
 
     return (
-        <div className={className}>
+        <div id="details_one" className={clsx(className, "w-fit p-4 text-center text-xl leading-[1.15] text-light bg-secondary-700/80")}>
             <dl>
                 <div className="pt-4">
                     <dt className="sr-only">Date</dt>
@@ -53,11 +55,11 @@ function EventDetails({ className }: { className: string }) {
     )
 }
 
-function EventSweeteners({ className }: { className: string }) {
+function EventSweeteners({ className }: React.ComponentProps<'div'>) {
 
     return (
-        <div className={className}>
-            <ul className="grid grid-cols-2 text-left max-w-[40ch] pl-4 pb-4 gap-2 list-disc text-yellow-400 text-nowrap">
+        <div id="details_two" className={clsx(className, "w-fit p-4 text-center text-lg text-light bg-purple-400/80")}>
+            <ul className="flex flex-wrap text-left max-w-[40ch] pl-4 pb-4 gap-x-10 list-disc marker-tight text-yellow-400 text-nowrap">
                 <li>Stalls</li>
                 <li>Pram friendly</li>
                 <li>Community Vibes</li>

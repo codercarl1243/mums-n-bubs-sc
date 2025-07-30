@@ -51,7 +51,7 @@ export default function RootLayout({
       <body
         className={`${fontMain.variable} ${fontHeading.variable} antialiased font-main body-wrapper`}
       >
-        <Header />
+        <Header className="width-full"/>
         {children}
       </body>
     </html>

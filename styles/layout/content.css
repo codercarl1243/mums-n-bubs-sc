@@ -1,16 +1,37 @@
-
-
 .body-wrapper {
-  --body-wrapper-padding: min(2rem, 5vw); /* Shrinks on small viewports */
+  --_min-width: 20rem;                         /* 320px */
+  --_max-width: 90rem;                         /* 1440px */
+  --_padding-width: clamp(0px, 2vw, 2rem);     /* responsive outer padding */
+  --_bleed-width: clamp(0px, 5.5vw, 5rem);     /* responsive bleed */
+
   display: grid;
-  grid-template-columns: var(--body-wrapper-padding) 1fr var(--body-wrapper-padding);
-}
+  width: clamp( var(--_min-width), 100%, var(--_max-width));
+  margin-inline: auto;
 
-/* Targets all direct children and places them in the center column */
+  grid-template-columns:
+    [padding-start] var(--_padding-width)
+    [bleed-start] var(--_bleed-width)
+    [content-start] minmax(
+      calc(var(--_min-width) - (var(--_padding-width) * 2) - (var(--_bleed-width) * 2)),
+      calc(var(--_max-width) - (var(--_padding-width) * 2) - (var(--_bleed-width) * 2))
+    ) [content-end]
+    var(--_bleed-width) [bleed-end]
+    var(--_padding-width) [padding-end];
+  outline: 1px solid blue;
+
+}
 .body-wrapper > * {
-  grid-column: 2;
+  grid-column: content-start;
+  outline: 1px solid red;
 }
 
-html {
-  
+.body-wrapper > .width-bleed {
+  grid-column: bleed-start / bleed-end;
+  outline: 1px solid purple;
+}
+
+/* True full-width: spans edge to edge */
+.body-wrapper > .width-full {
+  grid-column: padding-start / padding-end;
+  outline: 1px solid green;
 }
