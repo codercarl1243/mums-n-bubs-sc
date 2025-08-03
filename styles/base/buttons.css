@@ -49,12 +49,12 @@
         /* 👆👆 per project preferences 👆👆 */
 
         /* borders and outlines */
-        border: var(--button-border);
         border-color: var(--button-border-color);
+        border: var(--button-border);
         border-radius: var(--button-border-radius);
         box-shadow: var(--button-shadow);
-        outline: var(--button-outline);
         outline-color: var(--button-outline-color);
+        outline: var(--button-outline);
         outline-offset: var(--button-outline-offset);
 
         /* padding and margins */

@@ -1,5 +1,7 @@
 @layer utilities {
   .marker-tight li::marker {
     margin-right: -0.5em; /* Bring marker closer */
+    display: none;
   }
+
 }

@@ -1,4 +1,7 @@
-import Image from '@/components/image';
+'use client';
+import useEmblaCarousel from 'embla-carousel-react';
+import Autoplay from 'embla-carousel-autoplay';
+import EmblaCarousel from '@/components/carousel';
 
 type Sponsor = {
     name: string;
@@ -9,68 +12,68 @@ type Sponsor = {
 const SPONSORS: Sponsor[] = [
     {
         name: "Sunshine Beverages",
-        logo: "https://placehold.co/150x150",
-        url: "https://sunshinebeverages.com",
+        logo: "/150x150_placeholder.png",
+        url: "/#",
     },
     {
         name: "Palmwoods Hardware",
-        logo: "https://placehold.co/150x150",
-        url: "https://palmwoodshardware.com.au",
+        logo: "/150x150_placeholder.png",
+        url: "/#",
     },
     {
         name: "Greenfield Organics",
-        logo: "https://placehold.co/150x150",
-        url: "https://greenfieldorganics.com",
+        logo: "/150x150_placeholder.png",
+        url: "/#",
     },
     {
         name: "Coastal Bank",
-        logo: "https://placehold.co/150x150",
-        url: "https://coastalbank.com.au",
+        logo: "/150x150_placeholder.png",
+        url: "/#",
     },
     {
         name: "SparkTech Solutions",
-        logo: "https://placehold.co/150x150",
-        url: "https://sparktech.io",
+        logo: "/150x150_placeholder.png",
+        url: "/#",
     },
     {
         name: "Valley View Farms",
-        logo: "https://placehold.co/150x150",
-        url: "https://valleyviewfarms.com",
+        logo: "/150x150_placeholder.png",
+        url: "/#",
     },
     {
         name: "Rise & Grind Café",
-        logo: "https://placehold.co/150x150",
-        url: "https://riseandgrindcafe.com",
+        logo: "/150x150_placeholder.png",
+        url: "/#",
     },
     {
         name: "Studio Bloom Designs",
-        logo: "https://placehold.co/150x150",
-        url: "https://studiobloomdesigns.com",
+        logo: "/150x150_placeholder.png",
+        url: "/#",
     },
 ];
+// const SLIDES = Array.from(Array(5).keys())
 
 export default function Sponsors() {
+
 
     return (
         <section>
             <h2 className="text-center text-secondary-700">Sponsors</h2>
-            <div
-                className="
-          columns-2 
-          sm:columns-3 
-          md:columns-4 
-          gap-4 
-          space-y-4 
-          [column-fill:_balance] 
-          mx-auto max-w-6xl"
-            >
-                {SPONSORS.map((sponsor) => (
+            {/* <div className="columns-[auto] rows-1 gap-2"> */}
+                <EmblaCarousel slides={SPONSORS} />
+                {/* <div className='overflow-hidden flex' ref={emblaRef}>
+                    {SPONSORS.map(({ logo, url }, i) => (
+                       
+                    ))}
+
+                </div> */}
+                {/* {SPONSORS.map((sponsor) => (
                     <a
                         key={sponsor.name}
                         href={sponsor.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="break-inside-avoid p-2 hover:opacity-80 transition-opacity"
+                        className="w-fit hover:opacity-80 transition-opacity"
                         title={sponsor.name}
                     >
                         <Image
@@ -81,8 +84,8 @@ export default function Sponsors() {
                             className="border rounded-xl"
                         />
                     </a>
-                ))}
-            </div>
+                ))} */}
+            {/* </div> */}
         </section>
     )
 }

@@ -7,7 +7,7 @@ import { RiArrowDropDownLine, RiArrowDropUpLine } from "@remixicon/react";
 
 type AccordionItem = {
     question: string;
-    answer: string;
+    answer: React.ReactNode;
     id: number; // optional initially
     isOpen: boolean;
 };
@@ -35,7 +35,7 @@ export default function Accordion({ accordionName, items }: AccordionProps) {
     };
 
     return (
-        <div className="accordion w-fit border border-secondary-700 rounded-[1rem]">
+        <div className="accordion border border-secondary-700 rounded-[1rem]">
             {itemsWithOpenState.map(({ id, question, answer, isOpen }) => {
                 const buttonId = `accordion-button-${accordionName + id}`;
                 const panelId = `accordion-panel-${accordionName + id}`;
@@ -56,7 +56,7 @@ export default function Accordion({ accordionName, items }: AccordionProps) {
                                 aria-controls={panelId}
                                 className={clsx(
                                     // "accordion--item__button w-full m-0 border-x-0 transition-[border] duration-300 ease-in-out py-1 px-2 font-medium flex items-center",
-                                    "text-lg accordion--item__button w-full m-0 p-[0.3rem] font-medium flex items-center border-x-0 transition-all duration-200 ease-in-out",
+                                    "text-lg accordion--item__button w-full m-0 px-1 py-2 font-medium flex items-center border-x-0 transition-all duration-200 ease-in-out text-wrap",
                                     "hover:bg-secondary-700/60 hover:text-light",
                                     "active:bg-light active:text-secondary-700 ",
                                     "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary-400 focus-visible:z-10",
@@ -65,7 +65,7 @@ export default function Accordion({ accordionName, items }: AccordionProps) {
                                 )}
                             >
                                 <span aria-hidden>{isOpen ? <Icon icon={RiArrowDropUpLine} /> : <Icon icon={RiArrowDropDownLine} />}</span>
-                                <span>{question}</span>
+                                {question}
                             </Button>
                         </h3>
                         <div

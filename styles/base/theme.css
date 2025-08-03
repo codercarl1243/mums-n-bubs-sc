@@ -19,19 +19,19 @@
   --color-accent-400: hsl(33, 94%, 73%);
   --color-accent-700: hsl(31, 100%, 32%); */
   /* Light and Dark */
-  --color-light: #fafafa;
+  --color-light: rgb(234, 234, 234);
   --color-light-40: hsl(0, 0%, 95%, 0.4);
-  --color-dark: hsl(0, 0%, 15%);
+  --color-dark: rgb(38, 38, 38);
   --color-dark-40: hsla(0, 0%, 15%, 0.4);
 
   /* neutral colors */
-  --color-neutral-100: hsl(0, 0%, 90%);
-  --color-neutral-200: hsl(0, 0%, 80%);
-  --color-neutral-300: hsl(0, 0%, 70%);
-  --color-neutral-400: hsl(0, 0%, 60%);
-  --color-neutral-700: hsl(0, 0%, 30%);
+  --color-neutral-100: rgb(230, 230, 230);
+  --color-neutral-200: rgb(204, 204, 204);
+  --color-neutral-300: rgb(179, 179, 179);
+  --color-neutral-400: rgb(153, 153, 153);
+  --color-neutral-700: rgb(77, 77, 77);
 
-  --color-background: var(--color-light);
+  --color-background: #FFF;
   --color-foreground: var(--color-dark);
 
   --color-border: var(--color-foreground);

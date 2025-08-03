@@ -17,21 +17,17 @@
     ) [content-end]
     var(--_bleed-width) [bleed-end]
     var(--_padding-width) [padding-end];
-  outline: 1px solid blue;
 
 }
 .body-wrapper > * {
   grid-column: content-start;
-  outline: 1px solid red;
 }
 
 .body-wrapper > .width-bleed {
   grid-column: bleed-start / bleed-end;
-  outline: 1px solid purple;
 }
 
 /* True full-width: spans edge to edge */
 .body-wrapper > .width-full {
   grid-column: padding-start / padding-end;
-  outline: 1px solid green;
 }
