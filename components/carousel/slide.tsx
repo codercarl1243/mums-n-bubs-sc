@@ -17,6 +17,7 @@ export default function Slide({ name, logo, url }: TSlide) {
             className="relative group w-[10rem] h-[10rem] md:w-[15rem] md:h-[15rem] focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
             title={name}
             aria-label={`Visit ${name}'s website`}
+            tabIndex={-1}
         >
             <Image
                 src={logo}

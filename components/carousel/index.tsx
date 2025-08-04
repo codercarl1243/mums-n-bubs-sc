@@ -36,7 +36,7 @@ const EmblaCarousel: React.FC<PropType> = ({ slides, ...props }: PropType) => {
         className="embla" 
         aria-roledescription="carousel" 
         role="region"
-        tabIndex={0} 
+        tabIndex={0}
         {...props}>
             <div className="embla__viewport" ref={emblaRef}>
                 <div className="embla__container">
