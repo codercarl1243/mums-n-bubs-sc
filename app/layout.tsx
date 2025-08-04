@@ -23,21 +23,21 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  title: { 
-    default: "Bumps Babies and Beyond", 
-    template: '%s | Bumps Babies and Beyond' 
+  title: {
+    default: "Bumps Babies and Beyond",
+    template: '%s | Bumps Babies and Beyond'
   },
   openGraph: {
     title: "Bumps Babies and Beyond",
-  description: "TBA",
-  url: "TBA",
-  siteName: "Bumps Babies and Beyond",
-  // images: [{ url: 'https://TBA.og.png' }]
+    description: "TBA",
+    url: "TBA",
+    siteName: "Bumps Babies and Beyond",
+    // images: [{ url: 'https://TBA.og.png' }]
   },
   description: "TBA",
   keywords: ["TBA"],
   // HrefLang: "",
-  authors: {name: "Carl Davidson", url: "https://codercarl.dev"},
+  authors: { name: "Carl Davidson", url: "https://codercarl.dev" },
   robots: "TBA"
 };
 
@@ -51,8 +51,10 @@ export default function RootLayout({
       <body
         className={`${fontMain.variable} ${fontHeading.variable} antialiased font-main body-wrapper`}
       >
-        <Header className="width-full"/>
-        {children}
+        <Header className="width-full" />
+        <main id="main-content">
+          {children}
+        </main>
       </body>
     </html>
   );
