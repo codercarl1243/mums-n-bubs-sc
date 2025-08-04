@@ -1,3 +1,6 @@
+import Image from "next/image";
+import Icon from "@/components/icon";
+import { RiExternalLinkLine } from "@remixicon/react";
 
 export type TSlide = {
     name: string;
@@ -7,20 +10,33 @@ export type TSlide = {
 
 export default function Slide({ name, logo, url }: TSlide) {
 
-
     return (
         <a
             href={url}
-            target="_blank"
             rel="noopener noreferrer"
-            className="flex-shrink-0 w-[150px] h-[150px] md:w-[300px] md:h-[300px] p-4 flex items-center justify-center bg-white border border-gray-200 shadow-md mx-2 rounded-lg transition-transform duration-300 hover:scale-105"
+            className="relative group w-[10rem] h-[10rem] md:w-[15rem] md:h-[15rem] focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
+            title={name}
+            aria-label={`Visit ${name}'s website`}
         >
-            <img
+            <Image
                 src={logo}
-                alt=""
+                height={300}
+                width={300}
+                alt={`${name} logo`}
                 className="w-full h-full object-contain"
             />
+            <span
+                className={`
+          absolute top-2 right-2
+          opacity-0 group-hover:opacity-100 group-focus-within:opacity-100
+          transition-opacity
+          bg-white/70 text-black rounded-full p-1
+          pointer-events-none
+        `}
+                aria-hidden="true"
+            >
+                <Icon color={'var(--color-neutral-400)'} icon={RiExternalLinkLine} size={32} />
+            </span>
         </a>
     )
-
 }

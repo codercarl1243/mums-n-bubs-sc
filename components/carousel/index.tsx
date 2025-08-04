@@ -1,85 +1,63 @@
 'use client';
-import React, { useCallback, useState } from 'react'
-import { EmblaOptionsType, EmblaCarouselType } from 'embla-carousel'
 import {
     PrevButton,
     NextButton,
-    usePrevNextButtons,
-    useDotButton,
-    DotButton
 } from './carousel.buttons'
-import Autoplay from 'embla-carousel-autoplay'
-import useEmblaCarousel from 'embla-carousel-react'
+import { UseCarousel } from '@/components/carousel/useCarousel';
 import Slide, { TSlide } from './slide';
 import clsx from 'clsx';
-
+import { EmblaOptionsType } from 'embla-carousel';
 
 type PropType = {
     slides: TSlide[]
-    options?: EmblaOptionsType
-}
+} & React.ComponentProps<'div'>
 
-const EmblaCarousel: React.FC<PropType> = ({ slides }: PropType) => {
-    const [emblaRef, emblaApi] = useEmblaCarousel({
+const EmblaCarousel: React.FC<PropType> = ({ slides, ...props }: PropType) => {
+    const options: EmblaOptionsType = {
         loop: true,
         align: 'center',
-        containScroll: 'trimSnaps', // Prevent empty space at ends
-        slidesToScroll: 1, // Optional: scroll one slide at a time
-    }, [Autoplay({ delay: 2000, stopOnInteraction: true, stopOnMouseEnter: true })])
-
-    const { selectedIndex, scrollSnaps, onDotButtonClick } =
-        useDotButton(emblaApi)
-
-    const onNavButtonClick = useCallback((emblaApi: EmblaCarouselType) => {
-        const autoplay = emblaApi?.plugins()?.autoplay
-        if (!autoplay) return
-
-        const resetOrStop =
-            autoplay.options.stopOnInteraction === false
-                ? autoplay.reset
-                : autoplay.stop
-
-        resetOrStop()
-    }, [])
+        containScroll: 'trimSnaps',
+        slidesToScroll: 1,
+        dragFree: true
+    }
 
     const {
         prevBtnDisabled,
         nextBtnDisabled,
         onPrevButtonClick,
-        onNextButtonClick
-    } = usePrevNextButtons(emblaApi, onNavButtonClick)
+        onNextButtonClick,
+        selectedIndex,
+        emblaRef,
+        isDragging
+    } = UseCarousel(options)
 
     return (
-        <section className="embla">
+        <div 
+        className="embla" 
+        aria-roledescription="carousel" 
+        role="region"
+        tabIndex={0} 
+        {...props}>
             <div className="embla__viewport" ref={emblaRef}>
                 <div className="embla__container">
                     {slides.map((slide, index) => (
-                        <div className="embla__slide" key={index}>
+                        <div
+                            className={clsx("embla__slide", { 'embla__slide--selected': index === selectedIndex })}
+                            key={index}
+                            aria-roledescription="slide"
+                            aria-label={`${slide.name}`}
+                        >
                             <div className="embla__slide__content"><Slide {...slide} /></div>
                         </div>
                     ))}
                 </div>
             </div>
 
-            <div className="embla__controls">
-                <div className="embla__buttons">
-                    <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
-                    <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
-                </div>
-
-                <div className="embla__dots">
-                    {scrollSnaps.map((_, index) => (
-                        <DotButton
-                            key={index}
-                            onClick={() => onDotButtonClick(index)}
-                            className={'embla__dot'.concat(
-                                index === selectedIndex ? ' embla__dot--selected' : ''
-                            )}
-                        />
-                    ))}
-                </div>
+            <div className="embla__buttons">
+                <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled || isDragging} />
+                <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled|| isDragging} />
             </div>
-        </section>
+        </div>
     )
 }
 
