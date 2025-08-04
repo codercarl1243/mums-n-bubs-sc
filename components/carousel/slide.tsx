@@ -24,6 +24,7 @@ export default function Slide({ name, logo, url }: TSlide) {
                 width={300}
                 alt={`${name} logo`}
                 className="w-full h-full object-contain"
+                loading="lazy"
             />
             <span
                 className={`
