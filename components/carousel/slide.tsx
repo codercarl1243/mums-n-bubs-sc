@@ -14,7 +14,7 @@ export default function Slide({ name, logo, url }: TSlide) {
         <a
             href={url}
             rel="noopener noreferrer"
-            className="relative group w-[10rem] h-[10rem] md:w-[15rem] md:h-[15rem] focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
+            className="relative group h-full w-full focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
             title={name}
             aria-label={`Visit ${name}'s website`}
             tabIndex={-1}
@@ -24,7 +24,7 @@ export default function Slide({ name, logo, url }: TSlide) {
                 height={300}
                 width={300}
                 alt={`${name} logo`}
-                className="w-full h-full object-contain"
+                className="h-[253px] w-[194px] object-contain"
                 loading="lazy"
             />
             <span

@@ -10,50 +10,42 @@ type Sponsor = {
 const SPONSORS: Sponsor[] = [
     {
         name: "Sunshine Beverages",
-        // logo: "/150x150_placeholder.png",
-        logo: "/splotch_one.png",
+        logo: "/coming_soon.png",
         url: "/#",
     },
     {
         name: "Palmwoods Hardware",
-        // logo: "/150x150_placeholder.png",
-        logo: "/splotch_one.png",
+        logo: "/coming_soon.png",
         url: "/#",
     },
     {
         name: "Greenfield Organics",
-        // logo: "/150x150_placeholder.png",
-        logo: "/splotch_one.png",
+        logo: "/coming_soon.png",
         url: "/#",
     },
     {
         name: "Coastal Bank",
-        // logo: "/150x150_placeholder.png",
-        logo: "/splotch_one.png",
+        logo: "/coming_soon.png",
         url: "/#",
     },
     {
         name: "SparkTech Solutions",
-        // logo: "/150x150_placeholder.png",
-        logo: "/splotch_one.png",
+        logo: "/coming_soon.png",
         url: "/#",
     },
     {
         name: "Valley View Farms",
-        // logo: "/150x150_placeholder.png",
-        logo: "/splotch_one.png",
+        logo: "/coming_soon.png",
         url: "/#",
     },
     {
         name: "Rise & Grind Café",
-        // logo: "/150x150_placeholder.png",
-        logo: "/splotch_one.png",
+        logo: "/coming_soon.png",
         url: "/#",
     },
     {
         name: "Studio Bloom Designs",
-        // logo: "/150x150_placeholder.png",
-        logo: "/splotch_one.png",
+        logo: "/coming_soon.png",
         url: "/#",
     },
 ];

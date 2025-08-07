@@ -1,4 +1,4 @@
-.body-wrapper {
+.layout-wrapper {
   --_min-width: 20rem;                         /* 320px */
   --_max-width: 90rem;                         /* 1440px */
   --_padding-width: clamp(0px, 2vw, 2rem);     /* responsive outer padding */
@@ -19,15 +19,15 @@
     var(--_padding-width) [padding-end];
 
 }
-.body-wrapper > * {
+.layout-wrapper > * {
   grid-column: content-start;
 }
 
-.body-wrapper > .width-bleed {
+.layout-wrapper > .width-bleed {
   grid-column: bleed-start / bleed-end;
 }
 
 /* True full-width: spans edge to edge */
-.body-wrapper > .width-full {
+.layout-wrapper > .width-full {
   grid-column: padding-start / padding-end;
 }

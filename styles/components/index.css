@@ -4,6 +4,9 @@
 @import './buttons.toggle.css';
 /* links */
 @import './links.button.css';
+@import './links.social.css';
+
 /* custom component */
+@import './divider.css';
 @import './accordion.css';
 @import './embla.css';

@@ -6,13 +6,14 @@ import Icon from "../icon";
 import NextImage from 'next/image';
 import clsx from "clsx";
 
-export default function MainImage({ src, alt, width, height, className, ...rest }: React.ComponentProps<typeof NextImage>) {
+type ImageProps = React.ComponentProps<typeof NextImage>;
+
+export default function MainImage({ alt, width, height, className, ...rest }: ImageProps ) {
     return (
         <ErrorBoundary
             fallback={<FallbackImage width={width ?? 800} height={height ?? 300} />}
         >
             <NextImage
-                src={src}
                 alt={alt}
                 width={width}
                 height={height}

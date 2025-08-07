@@ -5,35 +5,37 @@ import React from "react"
 
 export default function Hero({ className, ...props }: React.ComponentProps<'div'>) {
 
-    return (
-        <div className={clsx(className, 
-            "grid grid-cols-1 grid-rows-[auto] gap-2",
-            "md:grid-cols-[2rem_2fr_2fr_3fr_2rem] md:grid-rows-2 items-center"
-        )} {...props}>
-            <Image 
-            src="/HeroImage.png" 
-            alt="Bumps, Babies & Beyond" 
-            width={1000} height={750} 
-            fetchPriority="high"
-            aria-label="Bumps, Babies & Beyond"
-            loading="eager"
-            className={
-                clsx("w-full h-auto object-cover row-1", 
-                    "md:row-[1/3] md:col-start-2 md:col-span-2"
-            )}/>
-            <Image src="/event_details.png" width={500} height={250} alt="" className={
-                clsx("w-full h-auto object-cover",
-                "md:row-1 md:col-4")} />
-            <EventSweeteners className="md:row-2 md:col-4"/>
-        </ div>
+  return (
+    <div className={clsx(className,
+      "grid grid-cols-1 grid-rows-[auto] gap-2",
+      "md:grid-cols-[2rem_2fr_2fr_3fr_2rem] md:grid-rows-2 items-center"
+    )} {...props}>
+      <Image
+        src="/HeroImage_924x660.png"
+        sizes="(max-width: 768px) 450px, (min-width: 769px) 924px"
+        alt="Bumps, Babies & Beyond"
+        width={924} height={660}
+        fetchPriority="high"
+        aria-label="Bumps, Babies & Beyond"
+        loading="eager"
+        className={
+          clsx("w-full h-auto object-cover row-1",
+            "md:row-[1/3] md:col-start-2 md:col-span-2"
+          )} />
+      <EventDetails className="row-span-3 col-end-1" />
+      {/* <Image src="/event_details.png"     fetchPriority="high" width={500} height={250} sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" alt="" className={
+        clsx("w-full h-auto object-cover",
+          "md:row-1 md:col-4")} /> */}
+      {/* <EventSweeteners className="md:row-2 md:col-4" /> */}
+    </ div>
 
-             // <LogoAsText className="text-3xl font-accent leading-none font-medium w-full text-center col-span-2 row-span-full" /> 
-             // <div className="flex flex-col items-center gap-8 md:items-start"> 
-                // <EventDetails className="row-span-3 col-end-1"/>
-                //  <EventSweeteners /> 
-             // </div> 
-        // </ section>
-    )
+    // <LogoAsText className="text-3xl font-accent leading-none font-medium w-full text-center col-span-2 row-span-full" /> 
+    // <div className="flex flex-col items-center gap-8 md:items-start"> 
+
+    //  <EventSweeteners /> 
+    // </div> 
+    // </ section>
+  )
 }
 
 // function LogoAsText(props: React.ComponentProps<'div'>) {
@@ -52,41 +54,41 @@ export default function Hero({ className, ...props }: React.ComponentProps<'div'
 //         </div>
 //     )
 // }
-// function EventDetails({ className }: React.ComponentProps<'img'>) {
+function EventDetails({ className }: React.ComponentProps<'img'>) {
 
-//     return (
-//             <img src="/event_details.png" alt="" className={clsx(className, "min-w-[250px]")} />
-//         // <div id="details_one" className={clsx(className, "w-full p-4 text-center text-xl leading-[1.15] text-light bg-secondary-700/80")}>
-//         //     <dl className="sr-only">
-//         //         <div className="pt-4">
-//         //             <dt className="sr-only">Date</dt>
-//         //             <dd>Saturday 1st November</dd>
-//         //         </div>
-//         //         <div>
-//         //             <dt className="sr-only">Location</dt>
-//         //             <dd>Palmwoods Memorial Hall</dd>
-//         //         </div>
-//         //         <div>
-//         //             <dt className="sr-only">Time</dt>
-//         //             <dd>10am–3pm</dd>
-//         //         </div>
-//         //         <div className="pb-4">
-//         //             <dt className="sr-only">Entry</dt>
-//         //             <dd>Free Entry!</dd>
-//         //         </div>
-//         //     </dl>
-//         // </div>
-//     )
-// }
+  return (
+    // <img src="/event_details.png" alt="" className={clsx(className, "min-w-[250px]")} />
+    <div id="details_one" className={clsx(className, "w-full p-4 text-center text-xl leading-[1.15]  md:row-1 md:col-4")}>
+        <dl>
+            <div className="pt-4">
+                <dt className="sr-only">Date</dt>
+                <dd>Saturday 1st November</dd>
+            </div>
+            <div>
+                <dt className="sr-only">Location</dt>
+                <dd>Palmwoods Memorial Hall</dd>
+            </div>
+            <div>
+                <dt className="sr-only">Time</dt>
+                <dd>10am–3pm</dd>
+            </div>
+            <div className="pb-4">
+                <dt className="sr-only">Entry</dt>
+                <dd>Free Entry!</dd>
+            </div>
+        </dl>
+    </div>
+  )
+}
 
 function EventSweeteners({ className }: React.ComponentProps<'ul'>) {
   const sweeteners = [
-    { icon: '🎓', label: 'Local Experts' },
-    { icon: '🎁', label: 'A free raffle for families' },
-    { icon: '🎨', label: 'Free Face Painting' },
-    { icon: '🫧', label: 'Bubble Station' },
-    { icon: '🐣', label: 'A free soft play zone for little ones' },
-    { icon: '🎲', label: 'Games & Gifts' },
+    { imageSrc: '🎓', label: 'Local Experts' },
+    { imageSrc: '🎁', label: 'A free raffle for families' },
+    { imageSrc: '🎨', label: 'Free Face Painting' },
+    { imageSrc: '🫧', label: 'Bubble Station' },
+    { imageSrc: '/bird.svg', label: 'A free soft play zone for little ones' },
+    { imageSrc: '🎲', label: 'Games & Gifts' },
   ]
 
   return (
@@ -98,7 +100,7 @@ function EventSweeteners({ className }: React.ComponentProps<'ul'>) {
     >
       {sweeteners.map((sweetener, idx) => (
         <li key={idx} className="flex items-center gap-2 min-w-[12ch]">
-          <span>{sweetener.icon}</span>
+          <Image src={sweetener.imageSrc} alt="" height={50} width={50}/>
           <span>{sweetener.label}</span>
         </li>
       ))}

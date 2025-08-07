@@ -3,6 +3,7 @@ import type { Viewport } from 'next'
 import { Geist, Concert_One } from "next/font/google";
 import "@/styles/globals.css";
 import Header from "@/components/header";
+import Footer from "@/components/footer";
 
 
 const fontMain = Geist({
@@ -47,14 +48,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="bg-neutral-50">
       <body
-        className={`${fontMain.variable} ${fontHeading.variable} antialiased font-main body-wrapper`}
+        className={`${fontMain.variable} ${fontHeading.variable} antialiased font-main layout-wrapper bg-white`}
       >
         <Header className="width-full" />
-        <main id="main-content">
+        <main id="main-content" className=" width-full layout-wrapper ">
           {children}
         </main>
+        <Footer  className="width-full"/>
       </body>
     </html>
   );
