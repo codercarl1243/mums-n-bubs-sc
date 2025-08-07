@@ -10,42 +10,42 @@ type Sponsor = {
 const SPONSORS: Sponsor[] = [
     {
         name: "Sunshine Beverages",
-        logo: "/coming_soon.png",
+        logo: "/coming_soon.webp",
         url: "/#",
     },
     {
         name: "Palmwoods Hardware",
-        logo: "/coming_soon.png",
+        logo: "/coming_soon.webp",
         url: "/#",
     },
     {
         name: "Greenfield Organics",
-        logo: "/coming_soon.png",
+        logo: "/coming_soon.webp",
         url: "/#",
     },
     {
         name: "Coastal Bank",
-        logo: "/coming_soon.png",
+        logo: "/coming_soon.webp",
         url: "/#",
     },
     {
         name: "SparkTech Solutions",
-        logo: "/coming_soon.png",
+        logo: "/coming_soon.webp",
         url: "/#",
     },
     {
         name: "Valley View Farms",
-        logo: "/coming_soon.png",
+        logo: "/coming_soon.webp",
         url: "/#",
     },
     {
         name: "Rise & Grind Café",
-        logo: "/coming_soon.png",
+        logo: "/coming_soon.webp",
         url: "/#",
     },
     {
         name: "Studio Bloom Designs",
-        logo: "/coming_soon.png",
+        logo: "/coming_soon.webp",
         url: "/#",
     },
 ];

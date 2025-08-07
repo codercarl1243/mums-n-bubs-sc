@@ -15,12 +15,12 @@ export default function Header({ className, ...props }: React.ComponentProps<'he
                         <span className="sr-only">Facebook</span>
                         <Icon icon={RiFacebookLine} size={'xl'} color={"var(--color-primary-700)"} />
                     </a>
-                <div className="flex items-end">
-                    <Image src="/chick1.svg" loading="lazy" className="" alt="" height={100} width={80} style={{ height: "20px" }} />
-                    <Image src="/chick2.svg" loading="lazy"  className=" ml-8" alt="" height={100} width={80} style={{ height: "20px" }} />
-                    <Image src="/chick3.svg" loading="lazy"  className=" ml-[-16px]" alt="" height={100} width={80} style={{ height: "20px" }} />
-                    <Image src="/chick4.svg" loading="lazy"  className=" ml-[-16px]" alt="" height={100} width={80} style={{ height: "20px" }} />
-                    <Image src="/chicken.svg" loading="lazy" alt="" height={250} width={100} style={{height: "100px"}} />
+                <div className="flex items-end gap-1">
+                    <Image src="/chick1.webp" loading="lazy" className="" alt="" height={100} width={80} style={{ height: "20px", width: "20px" }} />
+                    <Image src="/chick2.webp" loading="lazy"  className=" ml-16" alt="" height={100} width={80} style={{ height: "20px", width: "20px" }} />
+                    <Image src="/chick3.webp" loading="lazy"  className=" ml-[-2px]" alt="" height={100} width={80} style={{ height: "20px", width: "20px" }} />
+                    <Image src="/chick4.webp" loading="lazy"  className=" ml-[-6px]" alt="" height={100} width={80} style={{ height: "20px", width: "20px" }} />
+                    <Image src="/chicken.webp" loading="lazy" alt="" height={250} width={100} style={{height: "100px"}} />
                 </div>
             </header>
         </>
