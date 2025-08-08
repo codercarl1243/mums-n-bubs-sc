@@ -8,6 +8,7 @@ import Image from '@/components/image'
 export default function Home() {
   return (
     <>
+      <h1 className="sr-only">Bymps, babies and beyond</h1>
       <Hero className="width-bleed" />
       <Divider imageSrc={'/caterpillar.webp'} imageSide="left" />
       <Sponsors />

@@ -40,7 +40,7 @@ export default function FAQ(props: React.ComponentProps<'section'>) {
 
   return (
     <section {...props}>
-      <h2 className="text-xl text-center font-bold mb-4 text-secondary-700">FAQ&lsquo;s</h2>
+      <h2 className="text-xl text-center font-bold mb-4 text-primary-700">FAQ&lsquo;s</h2>
       <Accordion items={FAQ_DATA} accordionName={"faq"} />
     </section>
 

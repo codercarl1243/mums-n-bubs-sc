@@ -35,7 +35,7 @@ export default function Accordion({ accordionName, items }: AccordionProps) {
     };
 
     return (
-        <div className="accordion border border-secondary-700 rounded-[1rem]">
+        <div className="accordion border border-primary-700 rounded-[1rem]">
             {itemsWithOpenState.map(({ id, question, answer, isOpen }) => {
                 const buttonId = `accordion-button-${accordionName + id}`;
                 const panelId = `accordion-panel-${accordionName + id}`;
@@ -43,7 +43,7 @@ export default function Accordion({ accordionName, items }: AccordionProps) {
                 return (
                     <div key={id}
                         className={clsx(
-                            "accordion--item border-b border-secondary-700 last:border-none overflow-hidden",
+                            "accordion--item border-b border-primary-700 last:border-none overflow-hidden",
                             id === 0 && "first:rounded-t-[1rem]",
                             id === itemsWithOpenState.length - 1 && "last:rounded-b-[1rem]"
                         )}
@@ -57,8 +57,8 @@ export default function Accordion({ accordionName, items }: AccordionProps) {
                                 className={clsx(
                                     // "accordion--item__button w-full m-0 border-x-0 transition-[border] duration-300 ease-in-out py-1 px-2 font-medium flex items-center",
                                     "text-lg accordion--item__button w-full m-0 px-1 py-2 font-medium flex items-center border-x-0 transition-all duration-200 ease-in-out text-wrap",
-                                    "hover:bg-secondary-700/60 hover:text-light",
-                                    "active:bg-light active:text-secondary-700 ",
+                                    "hover:bg-primary-700/60 hover:text-light",
+                                    "active:bg-light active:text-primary-700 ",
                                     "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary-400 focus-visible:z-10",
                                     id === 0 && "first:rounded-t-[0.7rem] ",
                                     id === itemsWithOpenState.length - 1 && !isOpen && "last:rounded-b-[0.7rem]"

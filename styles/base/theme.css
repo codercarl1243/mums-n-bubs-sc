@@ -1,15 +1,15 @@
 /*  colors  */
 @theme {
   /* Primary */
-  --color-primary-200: hsl(217, 88%, 90%);
-  --color-primary-400: hsl(216, 100%, 68%);
-  --color-primary-700: hsl(215, 100%, 35%);
+  --color-primary-200: hsl(105, 18%, 56%);
+  --color-primary-400: hsl(105, 18%, 41%);
+  --color-primary-700: hsl(105, 18%, 26%);
 
   /* Secondary */
-  --color-secondary-200: hsl(153, 48%, 36%);
-  --color-secondary-400: hsl(162, 57%, 24%);
-  --color-secondary-700: hsl(162, 66%, 12%);
-
+  --color-secondary-200: hsl(217, 88%, 90%);
+  --color-secondary-400: hsl(216, 100%, 68%);
+  --color-secondary-700: hsl(215, 100%, 35%);
+  /*  misc */
   --color-purple-200: #6e27a0;
   --color-purple-400: hsl(275, 94%, 21%);
 
@@ -19,9 +19,9 @@
   --color-accent-400: hsl(33, 94%, 73%);
   --color-accent-700: hsl(31, 100%, 32%); */
   /* Light and Dark */
-  --color-light: rgb(234, 234, 234);
-  --color-light-40: hsl(0, 0%, 95%, 0.4);
-  --color-dark: rgb(38, 38, 38);
+  --color-light: hsl(40, 27%, 94%);
+  --color-light-40: hsla(40, 27.27%, 93.53%, 0.4);
+  --color-dark: hsl(0, 0%, 15%);
   --color-dark-40: hsla(0, 0%, 15%, 0.4);
 
   /* neutral colors */
@@ -31,7 +31,7 @@
   --color-neutral-400: rgb(153, 153, 153);
   --color-neutral-700: rgb(77, 77, 77);
 
-  --color-background: #FFF;
+  --color-background: var(--color-light);
   --color-foreground: var(--color-dark);
 
   --color-border: var(--color-foreground);
@@ -80,7 +80,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  --color-background: var(--color-dark);
+  --color-foreground: var(--color-light);
   }
 }

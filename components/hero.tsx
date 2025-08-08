@@ -7,6 +7,7 @@ export default function Hero({ className, ...props }: React.ComponentProps<'div'
 
   return (
     <div className={clsx(className,
+      "bg-light",
       "grid grid-cols-1 grid-rows-[auto] gap-2",
       "md:grid-cols-[2rem_2fr_2fr_3fr_2rem] md:grid-rows-2 items-center"
     )} {...props}>
@@ -58,7 +59,7 @@ function EventDetails({ className }: React.ComponentProps<'img'>) {
 
   return (
     // <img src="/event_details.png" alt="" className={clsx(className, "min-w-[250px]")} />
-    <div id="details_one" className={clsx(className, "w-full p-4 text-center text-xl leading-[1.15]  md:row-1 md:col-4")}>
+    <div id="details_one" className={clsx(className, "w-full p-4 text-center text-xl leading-[1.15] md:row-1 md:col-4 text-dark")}>
         <dl>
             <div className="pt-4">
                 <dt className="sr-only">Date</dt>

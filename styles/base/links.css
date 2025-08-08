@@ -1,11 +1,13 @@
 .link {
     height: fit-content;
-    color: var(--color-primary-700);
-    &:hover {
-        text-decoration: underline;
-    }
+    color: var(--color-light);
+    text-decoration: underline;
+    cursor: pointer;
+
+    &:hover {}
+
     &:focus-visible {
-       outline: 1px dashed var(--color-primary-700);
+        outline: 1px dashed var(--color-light);
         outline-offset: 2px;
     }
 }

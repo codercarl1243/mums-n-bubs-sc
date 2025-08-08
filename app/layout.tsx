@@ -48,9 +48,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="bg-neutral-50">
+    <html lang="en" className="bg-light">
       <body
-        className={`${fontMain.variable} ${fontHeading.variable} antialiased font-main layout-wrapper bg-white`}
+        className={`${fontMain.variable} ${fontHeading.variable} antialiased font-main layout-wrapper`}
       >
         <Header className="width-full" />
         <main id="main-content" className=" width-full layout-wrapper ">
