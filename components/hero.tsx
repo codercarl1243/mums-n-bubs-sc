@@ -82,29 +82,29 @@ function EventDetails({ className }: React.ComponentProps<'img'>) {
   )
 }
 
-function EventSweeteners({ className }: React.ComponentProps<'ul'>) {
-  const sweeteners = [
-    { imageSrc: '🎓', label: 'Local Experts' },
-    { imageSrc: '🎁', label: 'A free raffle for families' },
-    { imageSrc: '🎨', label: 'Free Face Painting' },
-    { imageSrc: '🫧', label: 'Bubble Station' },
-    { imageSrc: '/bird.svg', label: 'A free soft play zone for little ones' },
-    { imageSrc: '🎲', label: 'Games & Gifts' },
-  ]
+// function EventSweeteners({ className }: React.ComponentProps<'ul'>) {
+//   const sweeteners = [
+//     { imageSrc: '🎓', label: 'Local Experts' },
+//     { imageSrc: '🎁', label: 'A free raffle for families' },
+//     { imageSrc: '🎨', label: 'Free Face Painting' },
+//     { imageSrc: '🫧', label: 'Bubble Station' },
+//     { imageSrc: '/bird.svg', label: 'A free soft play zone for little ones' },
+//     { imageSrc: '🎲', label: 'Games & Gifts' },
+//   ]
 
-  return (
-    <ul
-      className={clsx(
-        className,
-        'w-full grid grid-cols-2 sm:grid-cols-3 gap-4 max-w-4xl'
-      )}
-    >
-      {sweeteners.map((sweetener, idx) => (
-        <li key={idx} className="flex items-center gap-2 min-w-[12ch]">
-          <Image src={sweetener.imageSrc} alt="" height={50} width={50}/>
-          <span>{sweetener.label}</span>
-        </li>
-      ))}
-    </ul>
-  )
-}
+//   return (
+//     <ul
+//       className={clsx(
+//         className,
+//         'w-full grid grid-cols-2 sm:grid-cols-3 gap-4 max-w-4xl'
+//       )}
+//     >
+//       {sweeteners.map((sweetener, idx) => (
+//         <li key={idx} className="flex items-center gap-2 min-w-[12ch]">
+//           <Image src={sweetener.imageSrc} alt="" height={50} width={50}/>
+//           <span>{sweetener.label}</span>
+//         </li>
+//       ))}
+//     </ul>
+//   )
+// }
