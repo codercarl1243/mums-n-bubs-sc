@@ -12,7 +12,7 @@ export default function Hero({ className, ...props }: React.ComponentProps<'div'
       "md:grid-cols-[2rem_2fr_2fr_3fr_2rem] md:grid-rows-2 items-center"
     )} {...props}>
       <Image
-        src="/HeroImage_924x660.webp"
+        src="/assets/HeroImage_924x660.webp"
         sizes="(max-width: 768px) 450px, (min-width: 769px) 924px"
         alt="Bumps, Babies & Beyond"
         width={924} height={660}
