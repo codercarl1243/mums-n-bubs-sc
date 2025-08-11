@@ -6,7 +6,7 @@ export default function ClinicMap() {
         <div>
             {process.env.GOOGLE_MAPS_API_KEY && <GoogleMapsEmbed
                 apiKey={process.env.GOOGLE_MAPS_API_KEY}
-                height={200}
+                height={350}
                 allowfullscreen
                 width={'100%'}
                 mode="place"

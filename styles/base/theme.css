@@ -31,7 +31,7 @@
   --color-neutral-400: rgb(153, 153, 153);
   --color-neutral-700: rgb(77, 77, 77);
 
-  --color-background: var(--color-light);
+  --color-background: var(--color-white);
   --color-foreground: var(--color-dark);
 
   --color-border: var(--color-foreground);
@@ -74,11 +74,4 @@
   --font-sans: var(--font-main);
   --font-accent: var(--font-main);
 
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-  --color-background: var(--color-dark);
-  --color-foreground: var(--color-light);
-  }
 }

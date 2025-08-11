@@ -7,7 +7,6 @@ export default function Hero({ className, ...props }: React.ComponentProps<'div'
 
   return (
     <div className={clsx(className,
-      "bg-light",
       "grid grid-cols-1 grid-rows-[auto] gap-2",
       "md:grid-cols-[2rem_2fr_2fr_3fr_2rem] md:grid-rows-2 items-center"
     )} {...props}>

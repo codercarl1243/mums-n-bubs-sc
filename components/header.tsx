@@ -10,7 +10,7 @@ export default function Header({ className, ...props }: React.ComponentProps<'he
     return (
         <>
             <SkipLink />
-            <header className={clsx(className, "flex justify-between items-center sm:gap-2 sm:p-4 mb-4 bg-primary-400")} {...props}>
+            <header className={clsx(className, "flex justify-between items-center sm:gap-2 sm:p-4 mb-4 ")} {...props}>
                 <Link href="/"><Logo /><span className="sr-only">Vitalia Health Chiropractic Clinic</span></Link>
                 <div className="flex items-end gap-1">
                     <Image src="/assets/drawings/chick1.webp" loading="lazy" className="" alt="Mother chicken with 4 baby chicks following her" height={100} width={80} style={{ height: "20px", width: "20px" }} />
