@@ -10,7 +10,7 @@ export default function Home() {
       <h1 className="sr-only">Bumps, babies and beyond</h1>
       <Hero className="width-bleed" />
       <Divider imageSrc={'/assets/drawings/caterpillar.webp'} imageSide="left" imageAlt="green caterpillar, drawn with crayons" />
-      <Sweeteners />
+      <Sweeteners/>
       <Divider imageSrc={'/assets/drawings/elephant.webp'} imageAlt="blue Elephant, drawn with crayons" />
       <Sponsors />
       <Divider imageSrc={'/assets/drawings/cat.webp'} imageAlt="orange Cat, drawn with crayons" imageSide="left" />

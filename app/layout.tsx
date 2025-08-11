@@ -45,10 +45,10 @@ export default function RootLayout({
   return (
     <html lang="en" className="bg-light">
       <body
-        className={`${fontMain.variable} antialiased font-main layout-wrapper`}
+        className={`${fontMain.variable} antialiased font-main layout-wrapper space-y-8`}
       >
         <Header className="width-full" />
-        <main id="main-content" className=" width-full layout-wrapper ">
+        <main id="main-content" className=" width-full layout-wrapper space-y-12 ">
           {children}
         </main>
         <Footer  className="width-full"/>
