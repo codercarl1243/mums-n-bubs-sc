@@ -6,35 +6,35 @@ import Image from '@/components/image'
 const FAQ_DATA = [
   {
     question: "How much does it cost?",
-    answer: <p>Entry is free</p>,
+    answer: <p className="whitespace-pre-line">Entry is free</p>,
   },
   {
     question: "Where is the event?",
-    answer: <p>The Event will be held in the Palmwoods Memorial Hall - 1 Main St, Palmwoods QLD 4555</p>,
+    answer: <p className="whitespace-pre-line">The Event will be held in the Palmwoods Memorial Hall - 1 Main St, Palmwoods QLD 4555</p>,
   },
   {
     question: "When is the event?",
-    answer: <p>1st of November 2025</p>,
+    answer: <p className="whitespace-pre-line">1st of November 2025</p>,
   },
   {
     question: "Is there Parking?",
-    answer: <p>Yes, parking is available at the venue. please refer to the below image for more information.\n [INSERT PARKING IMAGE HERE]</p>,
+    answer: <p className="whitespace-pre-line">Yes, parking is available at the venue. {"\n"} Please refer to the below image for more information.<br /> [INSERT PARKING IMAGE HERE]</p>,
   },
   {
     question: "Can I bring my Pram into the hall?",
-    answer: <p>Yes, the hall is super pram friendly.</p>,
+    answer: <p className="whitespace-pre-line">Yes, the hall is super pram friendly.</p>,
   },
   {
     question: "What can I do at the event?",
-    answer: <p>We will have a number of stalls available, local experts to ask questions of, \n play equipment for the little ones, and a free raffle for families.</p>,
+    answer: <p className="whitespace-pre-line">We will have a number of stalls available, local experts to ask questions of, {"\n"} play equipment for the little ones, and a free raffle for families. </p>,
   },
   {
     question: "What businesses will be at the event?",
-    answer: <p>[ INSERT INFORMATION HERE ]. For a full list of stall holders, please visit our <a href="/stall-holders">stall holders list</a> page.</p>,
+    answer: <p className="whitespace-pre-line">[ INSERT INFORMATION HERE ]. For a full list of stall holders, please visit our <a href="/stall-holders">stall holders list</a> page.</p>,
   },
   {
     question: "How do I participate in the raffle?",
-    answer: <p>[ INSERT RAFFLE INFORMATION HERE ]</p>,
+    answer: <p className="whitespace-pre-line">[ INSERT RAFFLE INFORMATION HERE ]</p>,
   },
 ];
 
