@@ -14,21 +14,19 @@ export default function ClinicHours(props: React.ComponentProps<'div'>) {
         <div {...props}>
             <h3
                 id="clinic-hours-heading"
-                className="text-lg font-semibold mb-3"
+                className="text-lg font-bold"
             >
                 Clinic Opening Hours
             </h3>
             <dl
                 aria-labelledby="clinic-hours-heading"
-                className="grid gap-2 my-4"
+                className="grid gap-1 my-4"
             >
                 {Object.entries(hours).map(([day, times]) => (
                     <div key={day}
                         className="grid grid-cols-[6ch_25ch] items-start gap-x-2"
                     >
-                        <dt>
-                            {day.charAt(0).toUpperCase() + day.slice(1)}:
-                        </dt>
+                        <dt className="font-bold">{day.charAt(0).toUpperCase() + day.slice(1)}:</dt>
                         <dd>
                             {times
                                 ? times.map((time, i) => (
@@ -49,7 +47,7 @@ export default function ClinicHours(props: React.ComponentProps<'div'>) {
                     </div>
                 ))}
             </dl>
-            <p>We look forward to welcoming you during our opening hours!</p>
+            <p className="mt-3">We look forward to welcoming you during our opening hours!</p>
         </div>
     )
 }

@@ -1,18 +1,13 @@
 import type { Metadata } from "next";
 import type { Viewport } from 'next'
-import { Geist, Concert_One } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import "@/styles/globals.css";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 
 
-const fontMain = Geist({
-  variable: "--font-main",
-  subsets: ["latin"],
-});
-
-const fontHeading = Concert_One({
-  weight: "400",
+const fontMain = Montserrat({
+  weight: ["400", "600", "700"],
   variable: "--font-accent",
   subsets: ["latin"],
 });
@@ -50,7 +45,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="bg-light">
       <body
-        className={`${fontMain.variable} ${fontHeading.variable} antialiased font-main layout-wrapper`}
+        className={`${fontMain.variable} antialiased font-main layout-wrapper`}
       >
         <Header className="width-full" />
         <main id="main-content" className=" width-full layout-wrapper ">

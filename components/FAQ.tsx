@@ -1,5 +1,7 @@
 import React from "react";
 import Accordion from "./accordion";
+import clsx from "clsx";
+import Image from '@/components/image'
 
 const FAQ_DATA = [
   {
@@ -39,10 +41,31 @@ const FAQ_DATA = [
 export default function FAQ(props: React.ComponentProps<'section'>) {
 
   return (
-    <section {...props}>
-      <h2 className="text-xl text-center font-bold mb-4 text-primary-700">FAQ&lsquo;s</h2>
-      <Accordion items={FAQ_DATA} accordionName={"faq"} />
+    <section className={
+      clsx("grid grid-cols-1 items-start my-4 gap-2 width-bleed",
+        "md:grid-cols-[4fr_2fr]"
+      )} {...props}>
+   <div
+        className={clsx(
+          "flex items-center justify-center gap-2", // h2 + image inline at small
+          "md:mb-4 md:contents" // md+ separate block layout
+        )}
+      >
+        <h2 className="text-xl font-bold text-primary-700 text-center">
+          FAQ&apos;s
+        </h2>
+        <Image
+          className={clsx(
+            "h-[50px] w-[45px] shrink-0", // small version
+            "md:h-[300px] md:w-[300px] md:place-self-center md:col-2 md:row-2" // large version
+          )}
+          src="/assets/drawings/bee.webp"
+          alt="yellow bee with black stripes, drawn with crayons"
+          height={300}
+          width={300}
+        />
+      </div>
+      <Accordion items={FAQ_DATA} accordionName={"faq"} className="col-1" />
     </section>
-
   )
 }

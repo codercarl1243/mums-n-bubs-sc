@@ -4,7 +4,7 @@ import Logo from "../logo";
 
 export default function ClinicContacts(){
     return (
-        <div className="flex flex-col gap-2 ">
+        <div className="flex flex-col gap-y-4 ">
                 <Logo />
                 <p className="flex gap-2 items-center">
                     <Icon icon={RiHome2Line} size={'lg'} color={"var(--color-white)"} />

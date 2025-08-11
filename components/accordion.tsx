@@ -15,9 +15,9 @@ type AccordionItem = {
 type AccordionProps = {
     accordionName: string;
     items: Omit<AccordionItem, 'id' | 'isOpen'>[];
-};
+} & React.ComponentProps<'div'>;
 
-export default function Accordion({ accordionName, items }: AccordionProps) {
+export default function Accordion({ accordionName, items, className, ...props }: AccordionProps) {
     const [itemsWithOpenState, setItemsWithOpenState] = useState<AccordionItem[]>(() =>
         items.map((item, idx) => ({
             ...item,
@@ -35,7 +35,7 @@ export default function Accordion({ accordionName, items }: AccordionProps) {
     };
 
     return (
-        <div className="accordion border border-primary-700 rounded-[1rem]">
+        <div className={clsx("accordion border border-primary-700 rounded-[1rem]", className)} {...props}>
             {itemsWithOpenState.map(({ id, question, answer, isOpen }) => {
                 const buttonId = `accordion-button-${accordionName + id}`;
                 const panelId = `accordion-panel-${accordionName + id}`;
@@ -55,8 +55,7 @@ export default function Accordion({ accordionName, items }: AccordionProps) {
                                 aria-expanded={isOpen}
                                 aria-controls={panelId}
                                 className={clsx(
-                                    // "accordion--item__button w-full m-0 border-x-0 transition-[border] duration-300 ease-in-out py-1 px-2 font-medium flex items-center",
-                                    "text-lg accordion--item__button w-full m-0 px-1 py-2 font-medium flex items-center border-x-0 transition-all duration-200 ease-in-out text-wrap",
+                                    "text-lg accordion--item__button w-full m-0 px-1 py-2 flex items-center border-x-0 transition-all duration-200 ease-in-out text-wrap",
                                     "hover:bg-primary-700/60 hover:text-light",
                                     "active:bg-light active:text-primary-700 ",
                                     "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary-400 focus-visible:z-10",

@@ -1,33 +1,36 @@
-.layout-wrapper {
-  --_min-width: 20rem;                         /* 320px */
-  --_max-width: 90rem;                         /* 1440px */
-  --_padding-width: clamp(0px, 2vw, 2rem);     /* responsive outer padding */
-  --_bleed-width: clamp(0px, 5.5vw, 5rem);     /* responsive bleed */
+@layer utilities {
 
-  display: grid;
-  width: clamp( var(--_min-width), 100%, var(--_max-width));
-  margin-inline: auto;
+  .layout-wrapper {
+    --_min-width: 20rem;
+    /* 320px */
+    --_max-width: 90rem;
+    /* 1440px */
+    --_padding-width: clamp(0px, 2vw, 2rem);
+    /* responsive outer padding */
+    --_bleed-width: clamp(0px, 5.5vw, 5rem);
+    /* responsive bleed */
 
-  grid-template-columns:
-    [padding-start] var(--_padding-width)
-    [bleed-start] var(--_bleed-width)
-    [content-start] minmax(
-      calc(var(--_min-width) - (var(--_padding-width) * 2) - (var(--_bleed-width) * 2)),
-      calc(var(--_max-width) - (var(--_padding-width) * 2) - (var(--_bleed-width) * 2))
-    ) [content-end]
-    var(--_bleed-width) [bleed-end]
-    var(--_padding-width) [padding-end];
+    display: grid;
+    width: clamp(var(--_min-width), 100%, var(--_max-width));
+    margin-inline: auto;
 
-}
-.layout-wrapper > * {
-  grid-column: content-start;
-}
+    grid-template-columns:
+      [padding-start] var(--_padding-width) [bleed-start] var(--_bleed-width) [content-start] minmax(calc(var(--_min-width) - (var(--_padding-width) * 2) - (var(--_bleed-width) * 2)),
+        calc(var(--_max-width) - (var(--_padding-width) * 2) - (var(--_bleed-width) * 2))) [content-end] var(--_bleed-width) [bleed-end] var(--_padding-width) [padding-end];
 
-.layout-wrapper > .width-bleed {
-  grid-column: bleed-start / bleed-end;
-}
+  }
 
-/* True full-width: spans edge to edge */
-.layout-wrapper > .width-full {
-  grid-column: padding-start / padding-end;
+  .layout-wrapper>* {
+    grid-column: content-start;
+  }
+
+  .layout-wrapper>.width-bleed {
+    grid-column: bleed-start / bleed-end;
+  }
+
+  /* True full-width: spans edge to edge */
+  .layout-wrapper>.width-full {
+    grid-column: padding-start / padding-end;
+  }
+
 }
