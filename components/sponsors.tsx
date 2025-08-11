@@ -56,7 +56,7 @@ export default function Sponsors() {
 
     return (
         <section>
-            {/* <h2 className="text-center text-secondary-700">Sponsors</h2> */}
+            <h2 className="text-xl font-bold text-primary-700 text-center">Partners & Local Businesses</h2>
             <EmblaCarousel slides={SPONSORS} />
         </section>
     )
